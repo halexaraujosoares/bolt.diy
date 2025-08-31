@@ -1,5 +1,5 @@
 # Estágio 1: Construção (Build)
-FROM node:18-bullseye AS builder
+FROM node:20-bullseye AS builder
 # Instala o pnpm globalmente
 RUN npm install -g pnpm
 
@@ -19,7 +19,7 @@ ENV NODE_OPTIONS=--max-old-space-size=4096
 RUN pnpm run build
 
 # Estágio 2: Produção (Imagem Final)
-FROM node:18-bullseye AS runner
+FROM node:20-bullseye AS runner
 WORKDIR /app
 
 # Define o ambiente para produção
