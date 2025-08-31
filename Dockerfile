@@ -1,5 +1,5 @@
 # Estágio 1: Construção (Build)
-ROM node:18-bullseye AS builder
+FROM node:18-bullseye AS builder
 # Instala o pnpm globalmente
 RUN npm install -g pnpm
 
