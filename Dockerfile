@@ -31,8 +31,9 @@ RUN npm install -g pnpm
 # Copia todos os arquivos do estágio de construção
 COPY --from=builder /app .
 
+...
 # Expõe a porta correta que a aplicação usa
-EXPOSE 8788
+EXPOSE 3000
 
 # O comando final e explícito para iniciar o servidor, ouvindo em todas as interfaces de rede
-CMD ["sh", "-c", "bindings=$(./bindings.sh) && wrangler pages dev ./build/client --ip=0.0.0.0 --port=8788 $bindings"]
+CMD ["sh", "-c", "bindings=$(./bindings.sh) && wrangler pages dev ./build/client --ip=0.0.0.0 --port=3000 $bindings"]
