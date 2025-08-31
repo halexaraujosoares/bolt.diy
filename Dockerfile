@@ -31,7 +31,6 @@ RUN npm install -g pnpm
 # Copia todos os arquivos do estágio de construção
 COPY --from=builder /app .
 
-...
 # Expõe a porta correta que a aplicação usa
 EXPOSE 3000
 
